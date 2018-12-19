@@ -18,8 +18,16 @@ app.get('/', function(request, response) {
 
 app.get('/api/timestamp/:date_string', (req, res) => {
     let date = req.params.date_string;
-    res.send(date)
+    res.send(fun.check(date)); 
+    
 });
+
+app.get('/api/timestamp/', (req, res) => {
+   
+        let today = new Date();
+       res.send(fun.check(today.toString()))
+    
+}
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
