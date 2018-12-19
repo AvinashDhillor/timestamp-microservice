@@ -1,6 +1,6 @@
 // server.js
 // where your node app starts
-
+const fun = require('./fun.js')
 // init project
 const express = require('express');
 const app = express();
@@ -14,6 +14,11 @@ app.use(express.static('public'));
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
+});
+
+app.get('/api/timestamp/:date_string', (req, res) => {
+    let date = req.params.date_string;
+    res.send(date)
 });
 
 // listen for requests :)
