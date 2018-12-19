@@ -7,7 +7,7 @@ const error = {
    err: "" 
 }
 
-const unix = (Date) => {
+const check = (Date) => {
    try {
     const date = new Date(Date)
      data.unix = date.getTime()
@@ -19,3 +19,4 @@ const unix = (Date) => {
     return error
   }
 }
+
